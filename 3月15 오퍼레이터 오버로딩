@@ -19,7 +19,7 @@ class CPnt{
     }
     CPnt operator+(CPnt r){ // Add = operator+, 연산자 오버로딩 //
         CPnt t;
-        t.w = w + r.w; // p1 + p2 //
+        t.w = w + r.w;
         t.h = h + r.h;
         return(t);
     }
