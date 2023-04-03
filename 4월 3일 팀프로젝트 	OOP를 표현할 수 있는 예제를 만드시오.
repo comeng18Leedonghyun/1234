@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+// w,h를 상속하는 클래스 CPoly //
+class CPoly{
+    protected : 
+    int w,h; 
+    public  :
+    virtual int Area()=0; // pure virtual function //
+};
+
+class CRect : public CPoly{
+    public : 
+    CRect(int _w, int _h){
+        w = _w; 
+        h = _h; 
+        
+    }
+    friend ostream& operator <<(ostream &os, CRect &r){
+        os << r.w << " " << r.h << endl; 
+        return os; 
+    }
+    int Area() override {return(w*h);} //가상함수 재정의, 안정성 +//
+};
+int main()
+{
+    CRect r(1,2); 
+    cout << r; 
+    cout << r.Area(); 
+    return 0;
+}
